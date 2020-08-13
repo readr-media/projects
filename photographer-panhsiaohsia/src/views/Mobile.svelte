@@ -1,11 +1,6 @@
 <section class="mobile-wrapper">
   <ProgressBar class="progress-barr" />
-  <header class="header">
-    <div class="header__logo-share">
-      <MirrorMediaLogo class="mirror-media-logo" />
-      <ShareButton class="share-button" />
-    </div>
-  </header>
+  <Header />
   <section class="article-wrapper">
     <article class="article">
       <div class="article__info info">
@@ -290,8 +285,7 @@
 
 <script>
   import ProgressBar from '../components/ProgressBar.svelte'
-  import MirrorMediaLogo from '../components/MirrorMediaLogo.svelte'
-  import ShareButton from '../components/ShareButton.svelte'
+  import Header from '../components/Header.svelte'
   import Year from '../components/Year.svelte'
   import Figure from '../components/Figure.svelte'
 </script>
@@ -301,21 +295,6 @@
     position: fixed;
     top: 0;
     left: 0;
-  }
-
-  .header {
-    position: fixed;
-    top: 10px;
-    left: 0;
-    width: 100%;
-    &__logo-share {
-      padding: 20px;
-      display: inline-flex;
-      align-items: center;
-      & :global(.share-button) {
-        margin: 0 0 0 10px;
-      }
-    }
   }
 
   .article-wrapper {
