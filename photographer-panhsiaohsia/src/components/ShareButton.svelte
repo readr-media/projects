@@ -6,7 +6,6 @@
   .share-button {
     width: 40px;
     height: 40px;
-    background-color: white;
     border-radius: 100%;
     display: flex;
     justify-content: center;

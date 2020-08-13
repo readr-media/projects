@@ -7,7 +7,6 @@
     display: inline-block;
     width: 40px;
     height: 40px;
-    background-color: white;
     border-radius: 100%;
     img {
       width: 100%;
