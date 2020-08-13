@@ -2,7 +2,7 @@
 <header transition:fade="{{duration: 100}}" class="header">
   <div class="header__logo-share">
     <MirrorMediaLogo class="mirror-media-logo" />
-    <ShareButton class="share-button" />
+    <ShareNav class="share-nav" />
   </div>
 </header>
 {/if}
@@ -11,7 +11,7 @@
 
 <script>
   import MirrorMediaLogo from './MirrorMediaLogo.svelte'
-  import ShareButton from './ShareButton.svelte'
+  import ShareNav from './ShareNav.svelte'
   import { fade } from 'svelte/transition'
 
   let y = 0
@@ -35,8 +35,7 @@
   &__logo-share {
     padding: 20px;
     display: inline-flex;
-    align-items: center;
-    & :global(.share-button) {
+    & :global(.share-nav) {
       margin: 0 0 0 10px;
     }
   }
