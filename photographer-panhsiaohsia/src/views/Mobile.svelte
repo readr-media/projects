@@ -1,7 +1,7 @@
 <section class="mobile-wrapper">
-  <ProgressBar class="progress-barr" />
+  <ProgressBar class="progress-bar" progressValue={articleProgress} />
   <Header />
-  <section class="article-wrapper">
+  <section bind:this={articleWrapper}  class="article-wrapper">
     <article class="article">
       <div class="article__info info">
         <div class="info__info-title info-title">
@@ -283,15 +283,25 @@
   </section>
 </section>
 
+<svelte:window on:scroll={handleWindowScroll} />
+
 <script>
   import ProgressBar from '../components/ProgressBar.svelte'
   import Header from '../components/Header.svelte'
   import Year from '../components/Year.svelte'
   import Figure from '../components/Figure.svelte'
+
+  let articleWrapper
+  let articleProgress = 0
+  function handleWindowScroll() {
+    const articleWrapperRect = articleWrapper.getBoundingClientRect()
+    articleProgress = -articleWrapperRect.top / (articleWrapperRect.bottom - articleWrapperRect.top)
+  }
+
 </script>
 
 <style lang="scss">
-  .mobile-wrapper :global(.progress-barr) {
+  .mobile-wrapper :global(.progress-bar) {
     position: fixed;
     top: 0;
     left: 0;
