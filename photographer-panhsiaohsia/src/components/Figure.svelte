@@ -29,6 +29,8 @@
   .figure {
     width: 100%;
     margin: 20px 0 0 0 ;
+    position: relative;
+    z-index: -1;
     img {
       width: 100%;
     }
