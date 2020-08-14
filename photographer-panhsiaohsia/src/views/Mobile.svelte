@@ -312,6 +312,9 @@
 <style lang="scss">
   .landing-wrapper {
     padding: 0 0 40px 0;
+    img {
+      width: 100%;
+    }
     h1 {
       width: 100%;
       padding: 0 20px;
