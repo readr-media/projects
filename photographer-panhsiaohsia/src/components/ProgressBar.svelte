@@ -19,6 +19,7 @@
 
 <style lang="scss">
   .progress-bar {
+    display: block;
     appearance: none;
     width: 100%;
     height: 10px;
