@@ -1,5 +1,5 @@
 <progress
-  class="progress-bar  {$$props.class || ''}"
+  class="progress-bar  {$$props.class || ''} {showProgressBar ? 'show' : ''}"
   value={$progress}
 >
 </progress>
@@ -14,7 +14,10 @@
 		easing: cubicOut
 	})
 
+  let showProgressBar = false
+
   $: progress.set(progressValue)
+  $: showProgressBar = $progress > 0
 </script>
 
 <style lang="scss">
@@ -23,6 +26,7 @@
     appearance: none;
     width: 100%;
     height: 10px;
+    z-index: 9999;
     &::-webkit-progress-bar {
       background-color: #eee;
     }
@@ -34,5 +38,9 @@
     }
     background-color: #eee;
     color: #135268;
+    opacity: 0;
+    &.show {
+      opacity: 1;
+    }
   }
 </style>
