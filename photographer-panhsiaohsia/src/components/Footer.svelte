@@ -77,7 +77,6 @@
     }
   }
 
-
   .credits {
     color: white;
     &__date {
@@ -85,6 +84,23 @@
     }
     .bold {
       font-weight: 500;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .footer {
+      padding: 50px 0;
+      padding-left: calc((100% - 620px) / 2);
+      padding-right: calc((100% - 620px) / 2);
+    }
+
+    .article-relatives-list {
+      display: flex;
+      &__list-item {
+        & + & {
+          margin: 0 0 0 40px;
+        }
+      }
     }
   }
 </style>
