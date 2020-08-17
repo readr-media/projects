@@ -16,12 +16,12 @@
   z-index: 10000;
   background-color: white;
   position: relative;
-  height: 80px;
+  height: 60px;
   &__logo-share {
     position: absolute;
     top: 0;
     left: 0;
-    padding: 20px;
+    padding: 10px 0 10px 20px;
     display: inline-flex;
     & :global(.share-nav) {
       margin: 0 0 0 10px;

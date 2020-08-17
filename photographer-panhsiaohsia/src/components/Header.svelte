@@ -34,7 +34,8 @@
   width: 100%;
   z-index: 9999;
   &__logo-share {
-    padding: 20px;
+    //padding: 20px;
+    padding: 10px 0 10px 20px;
     display: inline-flex;
     & :global(.share-nav) {
       margin: 0 0 0 10px;
