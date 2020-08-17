@@ -1,7 +1,10 @@
 <section class="mobile-wrapper">
+  <HeaderStatic />
   <Header />
   <section class="landing-wrapper">
-    <img src="img/figure-1954-1.jpg" alt="landing-image">
+    <div class="landing-image-wrapper">
+      <img src="img/figure-1954-1.jpg" alt="landing-image">
+    </div>
     <h1>
       <img src="img/title-m.svg" alt="title">
     </h1>
@@ -292,26 +295,35 @@
   </section>
   <section class="mobile-wrapper__youtube-section youtube-section">
     <h1>【一鏡到底】等待一朵花開的時間　潘小俠｜鏡人物</h1>
-    <div class="youtube-section__youtube-wrapper youtube-wrapper">
-      <iframe
-        src="https://www.youtube.com/embed/SvZSxA4qP6g"
-        frameborder="0"
-        allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
-      >
-      </iframe>
-    </div>
+    <Lazy
+      height={youtubeHeight}
+    >
+      <div class="youtube-section__youtube-wrapper youtube-wrapper">
+        <iframe
+          src="https://www.youtube.com/embed/SvZSxA4qP6g"
+          frameborder="0"
+          allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
+        >
+        </iframe>
+      </div>
+    </Lazy>
   </section>
   <Footer class="mobile-wrapper__footer" />
 </section>
 
-<svelte:window on:scroll={handleWindowScroll} />
+<svelte:window
+  on:scroll={handleWindowScroll}
+  bind:innerWidth={windowInnerWidth}
+/>
 
 <script>
   import ProgressBar from '../components/ProgressBar.svelte'
   import Header from '../components/Header.svelte'
+  import HeaderStatic from '../components/HeaderStatic.svelte'
   import Year from '../components/Year.svelte'
   import Figure from '../components/Figure.svelte'
   import Footer from '../components/Footer.svelte'
+  import Lazy from '../components/Lazy.svelte'
 
   let articleWrapper
   let articleProgress = 0
@@ -319,6 +331,10 @@
     const articleWrapperRect = articleWrapper.getBoundingClientRect()
     articleProgress = -articleWrapperRect.top / (articleWrapperRect.bottom - articleWrapperRect.top)
   }
+
+  export let youtubeIntrinsicsize = [320, 188]
+  let windowInnerWidth = 0
+  $: youtubeHeight = (youtubeIntrinsicsize[1] / youtubeIntrinsicsize[0]) * windowInnerWidth
 
 </script>
 
@@ -333,25 +349,43 @@
   }
 
   .landing-wrapper {
-    padding: 0 0 40px 0;
-    img {
-      width: 100%;
-    }
     h1 {
-      width: 100%;
-      padding: 0 20px;
+      width: calc(100% - 20px - 20px);
+      margin: 0 auto;
+      padding-top: 89%;
       position: relative;
-      top: -40px;
+      top: -60px;
       left: -20px;
       img {
+        position: absolute;
+        top: 0;
+        left: 0;
         width: 100%;
+        height: 100%;
       }
     }
     p {
+      position: relative;
+      top: -40px;
       padding: 0 20px;
       font-size: 16px;
       line-height: 1.56;
       text-align: justify;
+    }
+  }
+
+  .landing-image-wrapper {
+    width: 100%;
+    padding-top: 66.66%;
+    height: 0;
+    position: relative;
+    //z-index: 10000;
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
     }
   }
 
@@ -366,7 +400,7 @@
   }
 
   .article-wrapper {
-    margin: 90px 0 0 0;
+    margin: 45px 0 0 0;
     padding: 0 20px;
   }
 

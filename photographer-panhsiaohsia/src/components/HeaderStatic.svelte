@@ -1,4 +1,4 @@
-<header class="header" bind:this={el}>
+<header class="header">
   <div class="header__logo-share">
     <MirrorMediaLogo class="mirror-media-logo" />
     <ShareNav class="share-nav" />
@@ -8,7 +8,6 @@
 <script>
   import MirrorMediaLogo from './MirrorMediaLogo.svelte'
   import ShareNav from './ShareNav.svelte'
-  export let el
 </script>
 
 <style lang="scss">
