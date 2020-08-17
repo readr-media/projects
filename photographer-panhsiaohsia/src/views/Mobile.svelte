@@ -1,4 +1,5 @@
 <section class="mobile-wrapper">
+  <Header />
   <section class="landing-wrapper">
     <img src="img/figure-1954-1.jpg" alt="landing-image">
     <h1>
@@ -6,7 +7,6 @@
     </h1>
     <p>潘小俠是一個攝影家，拍照至今 40 年，曾獲頒 40 屆吳三連藝術獎，作品被北美館、台灣美術館典藏。他出身攝影記者，當過歌手經紀人，開過 PUB，無論身份為何，鏡頭始終對準台灣島上的人與事。從蘭嶼達悟族人到艋舺茶室小姐和遊民，從美術家、作家到白色恐怖受難者，他的每項主題拍攝時間動輒一、二十年，靠著長久而近距離的注視，為每一張曾在島嶼上生活的臉孔作記。</p>
   </section>
-  <Header />
   <section bind:this={articleWrapper}  class="article-section-wrapper">
     <ProgressBar class="progress-bar" progressValue={articleProgress}/>
     <div class="article-wrapper">
@@ -290,6 +290,18 @@
     </article>
     </div>
   </section>
+  <section class="mobile-wrapper__youtube-section youtube-section">
+    <h1>【一鏡到底】等待一朵花開的時間　潘小俠｜鏡人物</h1>
+    <div class="youtube-section__youtube-wrapper youtube-wrapper">
+      <iframe
+        src="https://www.youtube.com/embed/SvZSxA4qP6g"
+        frameborder="0"
+        allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
+      >
+      </iframe>
+    </div>
+  </section>
+  <Footer class="mobile-wrapper__footer" />
 </section>
 
 <svelte:window on:scroll={handleWindowScroll} />
@@ -299,6 +311,7 @@
   import Header from '../components/Header.svelte'
   import Year from '../components/Year.svelte'
   import Figure from '../components/Figure.svelte'
+  import Footer from '../components/Footer.svelte'
 
   let articleWrapper
   let articleProgress = 0
@@ -310,6 +323,15 @@
 </script>
 
 <style lang="scss">
+  .mobile-wrapper {
+    &__youtube-section {
+      margin: 50px 0 0 0;
+    }
+    :global(&__footer) {
+      margin: 50px 0 0 0;
+    }
+  }
+
   .landing-wrapper {
     padding: 0 0 40px 0;
     img {
@@ -386,5 +408,32 @@
     height: 30px;
     background-color: #135268;
     margin: 10px 0;
+  }
+
+  .youtube-section {
+    h1 {
+      font-size: 20px;
+      font-weight: 500;
+      line-height: 1.4;
+      text-align: justify;
+      padding: 0 20px;
+    }
+    &__youtube-wrapper {
+      margin: 20px 0 0 0;
+    }
+  }
+
+  .youtube-wrapper {
+    width: 100%;
+    padding-top: 58.75%;
+    height: 0;
+    position: relative;
+    iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
   }
 </style>
