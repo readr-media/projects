@@ -1,4 +1,4 @@
-<section class="mobile-wrapper">
+<section class="mobile-wrapper {$$props.class||''}">
   <HeaderStatic />
   <Header />
   <section class="landing-wrapper">
@@ -293,27 +293,12 @@
     </article>
     </div>
   </section>
-  <section class="mobile-wrapper__youtube-section youtube-section">
-    <h1>【一鏡到底】等待一朵花開的時間　潘小俠｜鏡人物</h1>
-    <Lazy
-      height={youtubeHeight}
-    >
-      <div class="youtube-section__youtube-wrapper youtube-wrapper">
-        <iframe
-          src="https://www.youtube.com/embed/SvZSxA4qP6g"
-          frameborder="0"
-          allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
-        >
-        </iframe>
-      </div>
-    </Lazy>
-  </section>
+  <Youtube class="mobile-wrapper__youtube-section" />
   <Footer class="mobile-wrapper__footer" />
 </section>
 
 <svelte:window
   on:scroll={handleWindowScroll}
-  bind:innerWidth={windowInnerWidth}
 />
 
 <script>
@@ -322,8 +307,8 @@
   import HeaderStatic from '../components/HeaderStatic.svelte'
   import Year from '../components/Year.svelte'
   import Figure from '../components/Figure.svelte'
+  import Youtube from '../components/Youtube.svelte'
   import Footer from '../components/Footer.svelte'
-  import Lazy from '../components/Lazy.svelte'
 
   let articleWrapper
   let articleProgress = 0
@@ -331,16 +316,11 @@
     const articleWrapperRect = articleWrapper.getBoundingClientRect()
     articleProgress = -articleWrapperRect.top / (articleWrapperRect.bottom - articleWrapperRect.top)
   }
-
-  export let youtubeIntrinsicsize = [320, 188]
-  let windowInnerWidth = 0
-  $: youtubeHeight = (youtubeIntrinsicsize[1] / youtubeIntrinsicsize[0]) * windowInnerWidth
-
 </script>
 
 <style lang="scss">
   .mobile-wrapper {
-    &__youtube-section {
+    :global(&__youtube-section) {
       margin: 50px 0 0 0;
     }
     :global(&__footer) {
@@ -442,32 +422,5 @@
     height: 30px;
     background-color: #135268;
     margin: 10px 0;
-  }
-
-  .youtube-section {
-    h1 {
-      font-size: 20px;
-      font-weight: 500;
-      line-height: 1.4;
-      text-align: justify;
-      padding: 0 20px;
-    }
-    &__youtube-wrapper {
-      margin: 20px 0 0 0;
-    }
-  }
-
-  .youtube-wrapper {
-    width: 100%;
-    padding-top: 58.75%;
-    height: 0;
-    position: relative;
-    iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-    }
   }
 </style>
