@@ -1,7 +1,26 @@
-<span>{year}</span>
+<p bind:this={element}>
+  {#each yearLetters as yearLetter, i}
+    <span
+      class="{show ? 'fade' : ''}"
+      style="transition-delay: {i / 4}s;"
+    >{yearLetter}</span>
+  {/each}
+</p>
 
 <script>
+  import { onMount } from 'svelte'
   export let year = '0000'
+  const yearLetters = year.split('')
+  export let show = false
+  let element
+  onMount(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        show = entry.isIntersecting
+      })
+    })
+    observer.observe(element)
+  })
 </script>
 
 <style lang="scss">
@@ -11,5 +30,10 @@
     font-weight: bold;
     font-family: Cochin;
     line-height: 1;
+    opacity: 0;
+    transition: opacity .5s ease-out;
+  }
+  .fade {
+    opacity: 1;
   }
 </style>
