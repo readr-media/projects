@@ -32,6 +32,7 @@
   top: 10px;
   left: 0;
   width: 100%;
+  z-index: 9999;
   &__logo-share {
     padding: 20px;
     display: inline-flex;
