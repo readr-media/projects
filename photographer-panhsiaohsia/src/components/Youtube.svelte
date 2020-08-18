@@ -1,5 +1,5 @@
 <section class="youtube-section {$$props.class || ''}">
-  <h1>【一鏡到底】等待一朵花開的時間　潘小俠｜鏡人物</h1>
+  <h1>【一鏡到底】寂寞見證者　潘小俠｜鏡人物</h1>
   <Lazy
     height={youtubeHeight}
   >

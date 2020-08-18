@@ -1,5 +1,5 @@
 <progress
-  class="progress-bar  {$$props.class || ''} {showProgressBar ? 'show' : ''}"
+  class="progress-bar {$$props.class || ''} {showProgressBar ? 'show' : ''}"
   value={$progress}
 >
 </progress>

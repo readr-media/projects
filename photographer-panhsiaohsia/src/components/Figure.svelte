@@ -1,4 +1,7 @@
-<figure class="figure">
+<figure
+  class="figure {$$props.class || ''}"
+  bind:this={figureElement}
+>
   <Lazy
     height={height}
     offset={0}
@@ -11,24 +14,24 @@
   <figcaption>{figcaption}</figcaption>
 </figure>
 
-<svelte:window
-  bind:innerWidth={windowInnerWidth}
-/>
-
 <script>
   import Lazy from './Lazy.svelte'
+  import { onMount } from 'svelte'
 
   export let figureName
   export let figcaption
   export let imgIntrinsicsize = [0, 0]
-  let windowInnerWidth = 0
-  $: height = (imgIntrinsicsize[1] / imgIntrinsicsize[0]) * (windowInnerWidth - 40)
+
+  let figureElement
+  let height
+  onMount(() => {
+    height = (imgIntrinsicsize[1] / imgIntrinsicsize[0]) * (figureElement.getBoundingClientRect().width)
+  })
 </script>
 
 <style lang="scss">
   .figure {
     width: 100%;
-    margin: 20px 0 0 0 ;
     position: relative;
     z-index: -1;
     img {
