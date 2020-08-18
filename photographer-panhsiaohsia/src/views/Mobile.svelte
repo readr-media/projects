@@ -23,11 +23,11 @@
           <p>潘小俠的曾祖父是台北士林旺族潘永清，曾中過清代舉人，是士林地區大地主，後來因三七五減租政策，家道中落。他出生在大宅邸、成長於廟口，自小觀察廟口形色人物，復興美工畢業後一度夢想到法國唸電影，後來自學攝影。</p>
         </div>
       </div>
-      <Figure
-        figureName="figure-1954-1"
-        figcaption="潘小俠自拍（潘小俠，1993）"
-        imgIntrinsicsize={[987, 664]}
-      />
+<!--      <Figure-->
+<!--        figureName="figure-1954-1"-->
+<!--        figcaption="潘小俠自拍（潘小俠，1993）"-->
+<!--        imgIntrinsicsize={[987, 664]}-->
+<!--      />-->
       <Figure
         figureName="figure-1954-2"
         figcaption="潘小俠於土城看守所（候聰慧，1989）"
