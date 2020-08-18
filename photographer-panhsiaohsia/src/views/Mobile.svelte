@@ -401,6 +401,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    min-width: 100px;
     h1 {
       font-size: 20px;
       font-weight: 500;
