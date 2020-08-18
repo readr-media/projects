@@ -16,7 +16,7 @@
       <article class="article">
       <div class="article__info info">
         <div class="info__info-title info-title">
-          <Year year="1991" />
+          <Year year="1954" />
           <h1>出生台北</h1>
         </div>
         <div class="info__info-description info-description">
