@@ -66,11 +66,6 @@
           </div>
         </div>
         <Figure
-          figureName="figure-1986-1"
-          figcaption="鄭南榕於自由時代雜誌社（潘小俠，1989）"
-          imgIntrinsicsize={[3748, 5489]}
-        />
-        <Figure
           figureName="figure-1986-2"
           figcaption="紀念鄭南榕焚而不毀（潘小俠，1989）"
           imgIntrinsicsize={[5478, 3680]}
@@ -79,6 +74,11 @@
           figureName="figure-1986-3"
           figcaption="詹益樺以十字身軀 焚而不毀（潘小俠，1989）"
           imgIntrinsicsize={[3538, 4498]}
+        />
+        <Figure
+          figureName="figure-1986-1"
+          figcaption="鄭南榕於自由時代雜誌社（潘小俠，1989）"
+          imgIntrinsicsize={[3748, 5489]}
         />
       </article>
       <article class="article">
@@ -92,9 +92,19 @@
           </div>
         </div>
         <Figure
-          figureName="figure-1990-1"
-          figcaption="醉巡（潘小俠，1987）"
-          imgIntrinsicsize={[1850, 2789]}
+          figureName="figure-1990-new-1"
+          figcaption="艋舺-賣唱老婦（潘小俠，1989）"
+          imgIntrinsicsize={[1000, 748]}
+        />
+        <Figure
+          figureName="figure-1990-new-2"
+          figcaption="艋舺-蒙古仔（潘小俠，1986）"
+          imgIntrinsicsize={[1000, 1439]}
+        />
+        <Figure
+          figureName="figure-1990-3"
+          figcaption="醉巡（潘小俠，1991）"
+          imgIntrinsicsize={[2789, 1850]}
         />
         <Figure
           figureName="figure-1990-2"
@@ -102,9 +112,9 @@
           imgIntrinsicsize={[1349, 1920]}
         />
         <Figure
-          figureName="figure-1990-3"
-          figcaption="醉巡（潘小俠，1991）"
-          imgIntrinsicsize={[2789, 1850]}
+          figureName="figure-1990-1"
+          figcaption="醉巡（潘小俠，1987）"
+          imgIntrinsicsize={[1850, 2789]}
         />
         <Figure
           figureName="figure-1990-4"
@@ -130,14 +140,14 @@
           </div>
         </div>
         <Figure
-          figureName="figure-1999-2002-1"
-          figcaption="《不知為誰而戰》紀錄片畫面"
-          imgIntrinsicsize={[1435, 900]}
-        />
-        <Figure
           figureName="figure-1999-2002-2"
           figcaption="921 地震潘小俠抵原住民部落攝影（潘小俠，1999）"
           imgIntrinsicsize={[405, 265]}
+        />
+        <Figure
+          figureName="figure-1999-2002-1"
+          figcaption="《不知為誰而戰》紀錄片畫面"
+          imgIntrinsicsize={[1435, 900]}
         />
       </article>
       <article class="article">
