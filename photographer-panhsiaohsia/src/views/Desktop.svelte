@@ -33,7 +33,6 @@
         />
         <div
           class="article__info info"
-          style="transform: translate(0, {-y / 3}px)"
         >
           <div class="info__info-title info-title">
             <Year year="1954" />
@@ -53,7 +52,6 @@
         />
         <div
           class="article__info info"
-          style="top: 500px; transform: translate(0, {-y / 3}px)"
         >
           <div class="info__info-title info-title">
             <Year year="1980" />
@@ -85,7 +83,6 @@
         />
         <div
           class="article__info info"
-          style="top: 800px; transform: translate(0, {-y / 3}px)"
         >
           <div class="info__info-title info-title">
             <Year year="1986" />
@@ -141,7 +138,6 @@
           />
         <div
           class="article__info info"
-          style="top: 1300px; transform: translate(0, {-y / 3}px)"
         >
           <div class="info__info-title info-title">
             <Year year="1990" />
@@ -167,7 +163,6 @@
         />
         <div
           class="article__info info"
-          style="top: 2300px; transform: translate(0, {-y / 3}px)"
         >
           <div class="info__info-title info-title">
             <Year year="1999-2002" />
@@ -199,7 +194,6 @@
         />
         <div
           class="article__info info"
-          style="top: 2600px; transform: translate(0, {-y / 3}px)"
         >
           <div class="info__info-title info-title">
             <Year year="2005" />
@@ -237,7 +231,6 @@
         />
         <div
           class="article__info info"
-          style="top: 2900px; transform: translate(0, {-y / 3}px)"
         >
           <div class="info__info-title info-title">
             <Year year="2006" />
@@ -269,7 +262,6 @@
         />
         <div
           class="article__info info"
-          style="top: 3600px; transform: translate(0, {-y / 3}px)"
         >
           <div class="info__info-title info-title">
             <Year year="2009" />
@@ -289,7 +281,6 @@
         />
         <div
           class="article__info info"
-          style="top: 3900px; transform: translate(0, {-y / 3}px)"
         >
           <div class="info__info-title info-title">
             <Year year="2015" />
@@ -309,7 +300,6 @@
         />
         <div
           class="article__info info"
-          style="top: 4200px; transform: translate(0, {-y / 3}px)"
         >
           <div class="info__info-title info-title">
             <Year year="2017" />
@@ -347,7 +337,6 @@
         />
         <div
           class="article__info info info--end"
-          style="top: 4500px; transform: translate(0, {-y / 3}px)"
         >
           <div class="info__info-title info-title">
             <Year year="2020" />
@@ -534,8 +523,12 @@
   .info {
     display: flex;
     flex-direction: column;
-    position: relative;
-    top: 300px;
+    position: sticky;
+    top: 50px;
+    left: 0;
+    height: max-content;
+    padding: 0 0 50px 0;
+    z-index: -2;
     &--end {
       justify-content: flex-end;
       padding: 0 0 100px 0;
