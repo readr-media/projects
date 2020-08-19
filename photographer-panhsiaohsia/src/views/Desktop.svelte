@@ -24,14 +24,18 @@
           figureName="figure-1954-2"
           figcaption="潘小俠於土城看守所（候聰慧，1989）"
           imgIntrinsicsize={[1024, 1545]}
+          style="transform: translate(0, {-y / 8}px)"
         />
         <Figure
           class="figure2"
           figureName="figure-1954-3"
           figcaption="潘小俠與歐陽文合影（潘小俠，2008）"
           imgIntrinsicsize={[2562, 1696]}
+          style="transform: translate(0, {-y / 15}px)"
         />
-        <div class="article__info info">
+        <div
+          class="article__info info"
+        >
           <div class="info__info-title info-title">
             <Year year="1954" />
             <h1>出生台北</h1>
@@ -47,8 +51,11 @@
           figureName="figure-1980-1"
           figcaption="潘小俠與蘭嶼友人合影（潘小俠，1981）"
           imgIntrinsicsize={[1156, 1686]}
+          style="transform: translate(0, {-y / 10}px)"
         />
-        <div class="article__info info">
+        <div
+          class="article__info info"
+        >
           <div class="info__info-title info-title">
             <Year year="1980" />
             <h1>拜訪蘭嶼</h1>
@@ -64,18 +71,21 @@
           figureName="figure-1986-2"
           figcaption="紀念鄭南榕焚而不毀（潘小俠，1989）"
           imgIntrinsicsize={[5478, 3680]}
+          style="transform: translate(0, {-y / 10}px)"
         />
         <Figure
           class="figure2"
           figureName="figure-1986-3"
           figcaption="詹益樺以十字身軀 焚而不毀（潘小俠，1989）"
           imgIntrinsicsize={[3538, 4498]}
+          style="transform: translate(0, {-y / 12}px)"
         />
         <Figure
           class="figure3"
           figureName="figure-1986-1"
           figcaption="鄭南榕於自由時代雜誌社（潘小俠，1989）"
           imgIntrinsicsize={[3748, 5489]}
+          style="transform: translate(0, {-y / 15}px)"
         />
         <div class="article__info info">
           <div class="info__info-title info-title">
@@ -333,6 +343,7 @@
 
 <svelte:window
   on:scroll={handleWindowScroll}
+  bind:scrollY={y}
 />
 
 <script>
@@ -349,6 +360,8 @@
     const articleWrapperRect = articleWrapper.getBoundingClientRect()
     articleProgress = -articleWrapperRect.top / (articleWrapperRect.bottom - articleWrapperRect.top)
   }
+
+  let y
 </script>
 
 <style lang="scss">

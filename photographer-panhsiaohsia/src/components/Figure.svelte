@@ -1,5 +1,6 @@
 <figure
   class="figure {$$props.class || ''}"
+  style="{$$props.style || ''}"
   bind:this={figureElement}
 >
   <Lazy
