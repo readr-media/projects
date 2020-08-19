@@ -109,7 +109,7 @@
     }
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: 1201px) {
     .footer {
       padding: 50px 0;
       padding-left: calc((100% - 620px) / 2);

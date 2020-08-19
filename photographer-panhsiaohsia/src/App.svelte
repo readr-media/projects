@@ -1,6 +1,6 @@
 <section class="app">
   {#if isMount}
-    {#if width <= 768}
+    {#if width <= 1200}
       <Mobile class="mobile" />
     {:else}
       <Desktop class="desktop" />

@@ -49,7 +49,7 @@ export let description = ''
     }
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: 1201px) {
     .article-relatives {
       display: block;
       width: 180px;
