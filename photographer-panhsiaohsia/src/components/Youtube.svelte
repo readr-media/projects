@@ -3,7 +3,9 @@
   <Lazy
     height={youtubeHeight}
   >
-    <div class="youtube-section__youtube-wrapper youtube-wrapper">
+    <div
+      class="youtube-section__youtube-wrapper youtube-wrapper"
+    >
       <iframe
         src="https://www.youtube.com/embed/SvZSxA4qP6g"
         frameborder="0"

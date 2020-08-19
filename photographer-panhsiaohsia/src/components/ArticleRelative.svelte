@@ -3,6 +3,7 @@
   target="_blank"
   rel="noreferrer noopener"
   class="article-relatives"
+  on:click
 >
   <div class="article-relatives__img-wrapper img-wrapper">
     <img src={imgSrc} alt="article-relatives-image">

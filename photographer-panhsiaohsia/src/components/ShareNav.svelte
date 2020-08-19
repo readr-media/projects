@@ -9,6 +9,7 @@
     href="https://www.facebook.com/sharer/sharer.php?u=https://www.mirrormedia.mg/projects/photographer-panhsiaohsia"
     target="_blank"
     rel="noreferrer noopener"
+    on:click={handleClickShare('fb')}
   >
     <img
       class="link__img"
@@ -22,6 +23,7 @@
     href="https://social-plugins.line.me/lineit/share?url=https://www.mirrormedia.mg/projects/photographer-panhsiaohsia"
     target="_blank"
     rel="noreferrer noopener"
+    on:click={handleClickShare('line')}
   >
     <img
       class="link__img"
@@ -39,6 +41,12 @@
 
   function handleButtonClick() {
     showLinks = !showLinks
+  }
+
+  function handleClickShare(socialNetwork) {
+    return function () {
+      ga('send', 'event', 'projects', 'click', `share to ${socialNetwork}`, { nonInteraction: false })
+    }
   }
 </script>
 

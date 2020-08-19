@@ -12,11 +12,16 @@
   export let year = '0000'
   const yearLetters = year.split('')
   export let show = false
+  let isGAScrollEventSent = false
   let element
   onMount(() => {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         show = entry.isIntersecting
+        if (show && !isGAScrollEventSent) {
+          ga('send', 'event', 'projects', 'scroll', year, { nonInteraction: false })
+          isGAScrollEventSent = true
+        }
       })
     })
     observer.observe(element)

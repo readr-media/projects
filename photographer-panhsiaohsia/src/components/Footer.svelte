@@ -1,18 +1,19 @@
 <footer class="footer {$$props.class||''}">
   <h1>相關文章</h1>
   <ul class="footer__article-relatives-list article-relatives-list">
-    {#each articleRelatives as article}
+    {#each articleRelatives as article, i}
       <li class="article-relatives-list__list-item">
         <ArticleRelative
           link={article.link}
           imgSrc={article.imgSrc}
           title={article.title}
           description={article.description}
+          on:click={handleClickArticleRelative(i + 1)}
         />
       </li>
     {/each}
   </ul>
-  <div class="footer__credits credits">
+  <div class="footer__credits credits" bind:this={creditElement}>
     <div>
       <p><span class="bold">記者：</span>尹俞歡</p>
       <p><span class="bold">攝影：</span>潘小俠提供</p>
@@ -23,6 +24,7 @@
 </footer>
 
 <script>
+  import { onMount } from 'svelte'
   import ArticleRelative from './ArticleRelative.svelte'
   const articleRelatives = [
     {
@@ -44,6 +46,26 @@
       description: '描述描述描述描述描述描述描述描述描述描述，描述描述描述描述，描述描述描述描述'
     }
   ]
+
+  let creditElement
+  let isGAScrollEventSent = false
+  onMount(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !isGAScrollEventSent) {
+          ga('send', 'event', 'projects', 'scroll', 'to end', { nonInteraction: false })
+          isGAScrollEventSent = true
+        }
+      })
+    })
+    observer.observe(creditElement)
+  })
+
+  function handleClickArticleRelative(order) {
+    return function () {
+      ga('send', 'event', 'projects', 'click', `article${order}`, { nonInteraction: false })
+    }
+  }
 </script>
 
 <style lang="scss">

@@ -85,9 +85,11 @@
           figureName="figure-1986-1"
           figcaption="鄭南榕於自由時代雜誌社（潘小俠，1989）"
           imgIntrinsicsize={[3748, 5489]}
-          style="transform: translate(0, {-y / 15}px)"
+          style="transform: translate(0, {-y / 9}px)"
         />
-        <div class="article__info info">
+        <div
+          class="article__info info"
+        >
           <div class="info__info-title info-title">
             <Year year="1986" />
             <h1>擔任報社<br>攝影記者</h1>
