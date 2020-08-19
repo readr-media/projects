@@ -20,7 +20,7 @@
   let showHeader = true
 
   $: if (oldY !== y) {
-    const isScrollingUp = y <= oldY
+    const isScrollingUp = y <= 0 || y <= oldY
     showHeader = isScrollingUp
     oldY = y
   }
