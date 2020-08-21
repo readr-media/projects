@@ -1,6 +1,6 @@
 <section class="desktop-wrapper">
   <Header />
-  <section class="landing-wrapper">
+  <section class="desktop-wrapper__landing-wrapper landing-wrapper">
     <div class="landing-wrapper__info-wrapper info-wrapper">
       <div class="info-wrapper__description">
         <p>潘小俠是一個攝影家，拍照至今 40 年，曾獲頒 40 屆吳三連藝術獎，作品被北美館、台灣美術館典藏。他出身攝影記者，當過歌手經紀人，開過 PUB，無論身份為何，鏡頭始終對準台灣島上的人與事。從蘭嶼達悟族人到艋舺茶室小姐和遊民，從美術家、作家到白色恐怖受難者，他的每項主題拍攝時間動輒一、二十年，靠著長久而近距離的注視，為每一張曾在島嶼上生活的臉孔作記。</p>
@@ -15,7 +15,7 @@
       </h1>
     </div>
   </section>
-  <section bind:this={articleWrapper} class="article-section-wrapper">
+  <section bind:this={articleWrapper} class="desktop-wrapper__article-section-wrapper article-section-wrapper">
     <ProgressBar class="progress-bar" progressValue={articleProgress}/>
     <div class="article-wrapper">
       <article class="article article--1954">
@@ -377,11 +377,23 @@
 </script>
 
 <style lang="scss">
+  .desktop-wrapper {
+    &__landing-wrapper {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: -1;
+    }
+    &__article-section-wrapper {
+      margin: 100vh 0 0 0;
+    }
+  }
+
   .landing-wrapper {
     display: flex;
     align-items: center;
-    min-height: 100vh;
-    position: relative;
+    width: 100vw;
+    height: 100vh;
   }
   .info-wrapper {
     width: 100%;
@@ -426,6 +438,8 @@
 
   .article-section-wrapper {
     position: relative;
+    background-color: white;
+    padding: 100px 0;
   }
 
   .desktop-wrapper :global(.progress-bar) {
@@ -436,8 +450,7 @@
 
   .article-wrapper {
     max-width: 1200px;
-    margin: 100px auto 100px auto;
-    padding: 0 20px;
+    margin: 0 auto;
   }
 
   .article {
@@ -528,7 +541,7 @@
     left: 0;
     height: max-content;
     padding: 0 0 50px 0;
-    z-index: -2;
+    //z-index: -2;
     &--end {
       justify-content: flex-end;
       padding: 0 0 100px 0;

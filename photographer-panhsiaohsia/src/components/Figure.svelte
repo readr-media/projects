@@ -34,7 +34,7 @@
   .figure {
     width: 100%;
     position: relative;
-    z-index: -1;
+    z-index: 2;
     img {
       width: 100%;
     }
