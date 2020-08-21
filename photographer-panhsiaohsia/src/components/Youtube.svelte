@@ -30,6 +30,8 @@
 
 <style lang="scss">
   .youtube-section {
+    background-color: white;
+    padding: 0 0 50px 0;
     h1 {
       font-size: 20px;
       font-weight: 500;

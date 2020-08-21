@@ -1,7 +1,11 @@
 <section class="mobile-wrapper {$$props.class||''}">
   <HeaderStatic />
   <Header />
-  <section class="landing-wrapper">
+  <section
+    bind:this={landingWrapperElement}
+    class="mobile-wrapper__landing-wrapper landing-wrapper"
+    style="top: {-landingStickyTop}px"
+  >
     <div class="landing-image-wrapper">
       <img src="img/figure-1954-1.jpg" alt="landing-image">
     </div>
@@ -10,7 +14,7 @@
     </h1>
     <p>潘小俠是一個攝影家，拍照至今 40 年，曾獲頒 40 屆吳三連藝術獎，作品被北美館、台灣美術館典藏。他出身攝影記者，當過歌手經紀人，開過 PUB，無論身份為何，鏡頭始終對準台灣島上的人與事。從蘭嶼達悟族人到艋舺茶室小姐和遊民，從美術家、作家到白色恐怖受難者，他的每項主題拍攝時間動輒一、二十年，靠著長久而近距離的注視，為每一張曾在島嶼上生活的臉孔作記。</p>
   </section>
-  <section bind:this={articleWrapper}  class="article-section-wrapper">
+  <section bind:this={articleWrapper} class="mobile-wrapper__article-section-wrapper article-section-wrapper">
     <ProgressBar class="progress-bar" progressValue={articleProgress}/>
     <div class="article-wrapper">
       <article class="article">
@@ -309,9 +313,11 @@
 
 <svelte:window
   on:scroll={handleWindowScroll}
+  on:resize={handleWindowResize}
 />
 
 <script>
+  import { onMount } from 'svelte'
   import ProgressBar from '../components/ProgressBar.svelte'
   import Header from '../components/Header.svelte'
   import HeaderStatic from '../components/HeaderStatic.svelte'
@@ -326,15 +332,27 @@
     const articleWrapperRect = articleWrapper.getBoundingClientRect()
     articleProgress = -articleWrapperRect.top / (articleWrapperRect.bottom - articleWrapperRect.top)
   }
+
+  let landingWrapperElement
+  let landingStickyTop = 0
+  onMount(() => {
+    handleWindowResize()
+  })
+  function handleWindowResize() {
+    const { height } = landingWrapperElement.getBoundingClientRect()
+    landingStickyTop = height - window.innerHeight
+  }
 </script>
 
 <style lang="scss">
   .mobile-wrapper {
-    :global(&__youtube-section) {
-      margin: 50px 0 0 0;
+    &__landing-wrapper {
+      position: sticky;
+      top: 0;
+      z-index: -1;
     }
-    :global(&__footer) {
-      margin: 50px 0 0 0;
+    &__article-section-wrapper {
+      margin: 250px 0 0 0;
     }
   }
 
@@ -381,6 +399,8 @@
 
   .article-section-wrapper {
     position: relative;
+    background-color: white;
+    padding: 50px 0;
   }
 
   .mobile-wrapper :global(.progress-bar) {
@@ -390,7 +410,6 @@
   }
 
   .article-wrapper {
-    margin: 45px 0 0 0;
     padding: 0 20px;
   }
 
