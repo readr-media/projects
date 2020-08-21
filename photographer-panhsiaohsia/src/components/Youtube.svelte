@@ -25,7 +25,7 @@
 
   let youtubeIntrinsicsize = [320, 188]
   let windowInnerWidth = 0
-  $: youtubeHeight = windowInnerWidth < 1201 ? (youtubeIntrinsicsize[1] / youtubeIntrinsicsize[0]) * windowInnerWidth : 365
+  $: youtubeHeight = windowInnerWidth < 769 ? (youtubeIntrinsicsize[1] / youtubeIntrinsicsize[0]) * windowInnerWidth : 365
 </script>
 
 <style lang="scss">
@@ -58,7 +58,7 @@
     }
   }
   
-  @media (min-width: 1201px) {
+  @media (min-width: 768px) {
     .youtube-section {
       background-color: #d8d8d8;
       padding: 50px 0 70px 0;
