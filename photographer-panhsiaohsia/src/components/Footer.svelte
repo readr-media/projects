@@ -28,22 +28,22 @@
   import ArticleRelative from './ArticleRelative.svelte'
   const articleRelatives = [
     {
-      link: '',
-      imgSrc: '',
-      title: '標題標題標題標題標題標題，標題標題標題',
-      description: '描述描述描述描述描述描述描述描述描述描述，描述描述描述描述，描述描述描述描述'
+      link: 'https://www.mirrormedia.mg/story/20200820pol001',
+      imgSrc: 'img/relative-article-1.jpeg',
+      title: '【一鏡到底】寂寞見證者　潘小俠',
+      description: '潘小俠是一名攝影家，他藉時間沉澱，也捕捉時間，每部作品拍攝時間動輒 10 幾年，靠著長久而近距離的注視，為每一張曾在島嶼上生活的臉孔作記。'
     },
     {
-      link: '',
-      imgSrc: '',
-      title: '標題標題標題標題標題標題，標題標題標題',
-      description: '描述描述描述描述描述描述描述描述描述描述，描述描述描述描述，描述描述描述描述'
+      link: 'https://www.mirrormedia.mg/story/20200820pol006',
+      imgSrc: 'img/relative-article-2.jpeg',
+      title: '【寂寞見證者番外篇】拍照意外邂逅金門王　潘小俠打造本土歌王組合',
+      description: '潘小俠拍照 40 年，其實有一段時間曾短暫放下相機沒拍照，跑去當歌手金門王、李炳輝的經紀人了。'
     },
     {
-      link: '',
-      imgSrc: '',
-      title: '標題標題標題標題標題標題，標題標題標題',
-      description: '描述描述描述描述描述描述描述描述描述描述，描述描述描述描述，描述描述描述描述'
+      link: 'https://www.mirrormedia.mg/story/20200820pol007',
+      imgSrc: 'img/relative-article-3.jpeg',
+      title: '【寂寞見證者番外篇】拍下詹益樺自焚關鍵時刻　潘小俠：警方就是要給他死',
+      description: '潘小俠 1986 年進入自立報系當攝影記者，經歷解嚴前後台灣政治快速變動的年代，也目賭不少重要歷史場景。'
     }
   ]
 
