@@ -1,4 +1,5 @@
 <section class="desktop-wrapper">
+  <TabletOrientationHint />
   <Header />
   <section class="desktop-wrapper__landing-wrapper landing-wrapper">
     <div class="landing-wrapper__info-wrapper info-wrapper">
@@ -365,6 +366,7 @@
   import Youtube from '../components/Youtube.svelte'
   import Figure from '../components/Figure.svelte'
   import Year from '../components/Year.svelte'
+  import TabletOrientationHint from '../components/TabletOrientationHint.svelte'
 
   let articleWrapper
   let articleProgress = 0
