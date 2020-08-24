@@ -19,7 +19,7 @@
       <p><span class="bold">攝影：</span>潘小俠提供</p>
       <p><span class="bold">專題網頁製作：</span>熊凱文、陳怡蒨、李又如、陳玟諺、簡信昌</p>
     </div>
-    <p class="credits__date">2020-08-22</p>
+    <p class="credits__date">2020-08-29</p>
   </div>
 </footer>
 
