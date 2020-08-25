@@ -11,6 +11,7 @@
 <svelte:window bind:innerWidth={width}/>
 
 <script>
+  import 'intersection-observer'
   import Mobile from './views/Mobile.svelte'
   import Desktop from './views/Desktop.svelte'
   import { onMount } from 'svelte'
