@@ -19,11 +19,22 @@
     transition: opacity 0.25s ease-out;
     img {
       width: 100px;
+      opacity: 0;
     }
   }
   @media (max-width: 1024px) and (orientation: portrait) {
     .tablet-orientation-hint {
       opacity: 1;
+      img {
+        width: 100px;
+        opacity: 1;
+      }
+    }
+  }
+
+  @media (min-width: 1025px) {
+    .tablet-orientation-hint {
+      display: none;
     }
   }
 </style>
