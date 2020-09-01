@@ -37,6 +37,8 @@
     z-index: 2;
     img {
       width: 100%;
+      user-select: none;
+      pointer-events: none;
     }
     figcaption {
       margin: 10px 0 0 0;
